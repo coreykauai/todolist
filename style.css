@@ -1,0 +1,39 @@
+body {
+  display: flex;
+}
+
+.todo-container {
+  border: 2px solid black;
+  padding: 12px;
+}
+
+.todo-subtainer {
+  border: 2px solid black;
+  border-style: hidden solid solid solid;
+  padding: 12px;
+}
+
+.input-bar {
+  display: flex;
+  padding: 20px;
+  gap: 20px;
+}
+
+.sidebar {
+  width: 200px;
+  height: 100vh;
+  background-color: rgba(118, 223, 255, 0.384);
+}
+
+.content {
+  flex-grow: 1;
+  background-color: rgba(255, 163, 43, 0.3);
+}
+
+#inputs {
+  margin-left: 20px;
+}
+
+.labels {
+  margin-left: 20px;
+}

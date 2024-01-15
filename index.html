@@ -4,8 +4,47 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
+    <div class="sidebar"></div>
+
+    <div class="content">
+      <form id="create-todo-form" action="">
+        <div class="input-bar">
+          <div class="inputers">
+            <label for="title" class="labels">Enter New Tudoo Here</label>
+            <input
+              type="text"
+              name="title"
+              id="inputs"
+              required="true"
+              placeholder="New TUDOO"
+            />
+          </div>
+
+          <div class="inputers">
+            <label for="description" class="labels"
+              >Any deets for the task?</label
+            >
+            <input
+              type="text"
+              name="description"
+              id="inputs"
+              placeholder="Optional"
+            />
+          </div>
+
+          <div class="inputers">
+            <label for="due-date">Get It Done By:</label>
+            <input type="date" name="due-date" id="inputs" required="true" />
+            <input type="submit" value="create" />
+          </div>
+        </div>
+      </form>
+    </div>
     <script src="./main.js" type="module"></script>
   </body>
 </html>
+
+<!-- At a minimum they should have a title, description, dueDate and priority. -->
