@@ -6,5 +6,14 @@ export function createProject(name, todoItems = []) {
   const getItems = () => {
     return todoItems;
   };
-  return { getName, getItems };
+
+  const addItem = (item) => {
+    todoItems.push(item);
+  };
+
+  function logItems() {
+    console.log("project items: ", todoItems);
+  }
+
+  return { getName, getItems, addItem, logItems };
 }

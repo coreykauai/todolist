@@ -2,27 +2,91 @@ body {
   display: flex;
 }
 
+.screen {
+  display: flex;
+  width: 100vw;
+  min-height: 100vh;
+  flex-grow: 1;
+}
+
+button,
+.button {
+  cursor: pointer;
+  background-color: none;
+  border: none;
+  width: 100px;
+  height: 40px;
+}
+
+.sidebar {
+  width: 15%;
+  height: 100%;
+  flex-grow: 1;
+  background-color: rgba(118, 223, 255, 0.384);
+  position: relative;
+}
+
+.ttitle {
+  font-size: large;
+}
+
+.filters {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  position: relative;
+  gap: 5px;
+  top: 1rem;
+}
+
+.titler {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  margin-bottom: 0px;
+  padding-right: 45rem;
+  font-size: 75px;
+}
+
+.stitle {
+  display: flex;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 25px;
+  margin: 0;
+  padding-right: 40rem;
+}
+
+.ttitle {
+  font-weight: 700;
+  padding: 20px;
+}
+
+.project-creator {
+  position: relative;
+  top: 4rem;
+}
+
 .todo-container {
   border: 2px solid black;
   padding: 12px;
+  margin: 1rem 5rem 0 5rem;
+  cursor: pointer;
 }
 
 .todo-subtainer {
   border: 2px solid black;
   border-style: hidden solid solid solid;
   padding: 12px;
+  margin: 5px 7rem 5px 7rem;
 }
 
 .input-bar {
   display: flex;
   padding: 20px;
-  gap: 20px;
-}
-
-.sidebar {
-  width: 200px;
-  height: 100vh;
-  background-color: rgba(118, 223, 255, 0.384);
+  gap: 10px;
+  background-color: rgba(133, 255, 255, 0.396);
+  margin: 5rem;
 }
 
 .content {
@@ -30,10 +94,16 @@ body {
   background-color: rgba(255, 163, 43, 0.3);
 }
 
-#inputs {
-  margin-left: 20px;
+.inputs {
 }
 
 .labels {
-  margin-left: 20px;
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: flex;
 }

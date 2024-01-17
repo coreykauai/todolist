@@ -6,16 +6,22 @@ export function createTodoItemView(title, description, dueDate) {
 
   todoContainer.classList.add("todo-container");
   descriptionView.classList.add("todo-subtainer");
+  descriptionView.classList.add("hide");
   dueDateView.classList.add("todo-subtainer");
+  dueDateView.classList.add("hide");
 
   titleView.textContent = title;
 
-  // const parent = document.getElementsByClassName("todo-container")
+  todoContainer.addEventListener("click", function () {
+    descriptionView.classList.toggle("show");
+    dueDateView.classList.toggle("show");
+  });
 
   todoContainer.append(title);
-
   descriptionView.append(description);
   dueDateView.append(dueDate);
+
+  //render or "append" to ANY element with this paramiter "view".
 
   const render = (view) => {
     view.append(todoContainer, descriptionView, dueDateView);

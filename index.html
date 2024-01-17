@@ -7,41 +7,71 @@
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
-    <div class="sidebar"></div>
-
-    <div class="content">
-      <form id="create-todo-form" action="">
-        <div class="input-bar">
-          <div class="inputers">
-            <label for="title" class="labels">Enter New Tudoo Here</label>
+    <div class="screen">
+      <div class="sidebar">
+        <div class="ttitle">TUDOO</div>
+        <button class="showFilters">Filter List</button>
+        <div class="hide filters">
+          <button class="filterAll">all</button>
+          <button class="filterToday">today</button>
+          <button class="filterWeek">upcomming</button>
+          <button class="filterDone">done</button>
+        </div>
+        <div class="project-creator">
+          <button class="project-maker">+new project</button>
+          <div class="hide newProject">
             <input
               type="text"
-              name="title"
-              id="inputs"
-              required="true"
-              placeholder="New TUDOO"
+              name="projectnamer"
+              id="projectNameinput"
+              class="projectnamers"
             />
-          </div>
-
-          <div class="inputers">
-            <label for="description" class="labels"
-              >Any deets for the task?</label
-            >
-            <input
-              type="text"
-              name="description"
-              id="inputs"
-              placeholder="Optional"
-            />
-          </div>
-
-          <div class="inputers">
-            <label for="due-date">Get It Done By:</label>
-            <input type="date" name="due-date" id="inputs" required="true" />
-            <input type="submit" value="create" />
+            <button class="projectnamers">make</button>
           </div>
         </div>
-      </form>
+      </div>
+
+      <div class="content">
+        <h1 class="titler">TUDOO</h1>
+        <p class="stitle">a modern list maker</p>
+        <form id="create-todo-form" action="">
+          <div class="input-bar">
+            <div class="inputers">
+              <label for="title" class="labels">Enter New Tudoo Here</label>
+              <input
+                type="text"
+                name="title"
+                class="inputs"
+                required="true"
+                placeholder="New TUDOO"
+              />
+            </div>
+
+            <div class="inputers">
+              <label for="description" class="labels"
+                >Any deets for the task?</label
+              >
+              <input
+                type="text"
+                name="description"
+                class="inputs"
+                placeholder="Optional"
+              />
+            </div>
+
+            <div class="inputers">
+              <label for="due-date">Get It Done By:</label>
+              <input
+                type="date"
+                name="due-date"
+                class="inputs"
+                required="true"
+              />
+              <input type="submit" value="create" class="button" />
+            </div>
+          </div>
+        </form>
+      </div>
     </div>
     <script src="./main.js" type="module"></script>
   </body>
