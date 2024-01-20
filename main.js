@@ -1,6 +1,6 @@
 import { createToDoItem } from "./model/todo-item.js";
-import { createTodoItemView } from "./view/todo-item-view.js";
-import { createProject } from "./model/projects.js";
+import { createProject } from "./model/project.js";
+import { createProjectController } from "./controller/project-controller.js";
 
 const CONTENT_VIEW = document.querySelector(".content");
 const form = document.getElementById("create-todo-form");
@@ -9,13 +9,15 @@ const projectBtn = document.querySelector(".project-maker");
 const projectcreator = document.querySelector(".newProject");
 const filtershow = document.querySelector(".showFilters");
 const itemsToFilter = document.querySelector(".filters");
+const NEW_PROJECT_FORM = document.querySelector("#create-project");
+const PROJECT_LIST = document.querySelector(".project-list");
+
+const projects = [];
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
 
   const data = form.elements;
-
-  console.log(data["description"].value);
 
   let newTodoItem = createToDoItem(
     data["title"].value,
@@ -30,17 +32,6 @@ form.addEventListener("submit", (e) => {
   itemView.render(CONTENT_VIEW);
 });
 
-let item = createToDoItem("pizza", "finish todo", 7.25);
-
-const todoView = createTodoItemView(
-  item.getTitle(),
-  item.getDescription(),
-  item.getDueDate()
-);
-
-todoView.render(CONTENT_VIEW);
-console.log(item.getTitle(), item.getDescription());
-
 projectBtn.addEventListener("click", () => {
   projectcreator.classList.toggle("show");
 });
@@ -49,8 +40,35 @@ filtershow.addEventListener("click", () => {
   itemsToFilter.classList.toggle("show");
 });
 
-const project = createProject("first one");
-project.logItems();
-project.addItem(item);
+NEW_PROJECT_FORM.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const formData = NEW_PROJECT_FORM.elements;
+  const newProjectName = formData["project-name"].value;
+  console.log(newProjectName);
+  const newProject1 = createProject(newProjectName);
+  projects.push(newProject1);
+  console.log(projects);
+  renderProjectList();
+});
 
-project.logItems();
+function renderProjectList() {
+  for (const project of projects) {
+    const PROJECT_TITLE = document.createElement("h3");
+    PROJECT_TITLE.textContent = project.getName();
+    PROJECT_LIST.append(PROJECT_TITLE);
+  }
+}
+
+let todoList = [
+  createToDoItem("finish", "this", 1.21),
+  createToDoItem("tudo", "list making", 1),
+  createToDoItem("project", "but need", 2),
+  createToDoItem("to", "figure out how to", 3),
+  createToDoItem("make", "the project folders", 7),
+];
+
+const sampoProject = createProject("sample project", todoList);
+
+const sampoController = createProjectController(sampoProject);
+
+sampoController.render(CONTENT_VIEW);
